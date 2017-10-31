@@ -4,8 +4,8 @@ public class Base10Converter {
 		EasyIn2 reader = new EasyIn2();
 		System.out.print("Enter base 10 number:");
 		double n = reader.getDouble();
-		System.out.print("Enter new base:");
-		int b = reader.getInt();
+		//System.out.print("Enter new base:");
+		int b = 2; //reader.getInt();
 		int i;
 		int j = 0;
 		double r = n;
@@ -48,6 +48,7 @@ public class Base10Converter {
 		
 		
 		
-		System.out.println("The value " + n + " in base " + b + " is " + stri + "." + stri2);		
+		System.out.println("The value " + n + " in base " + b + " is " + stri + "." + stri2);	
+		
 	}
 }
