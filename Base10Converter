@@ -1,0 +1,53 @@
+public class Base10Converter {
+	public static void main(String[] args) {
+		
+		EasyIn2 reader = new EasyIn2();
+		System.out.print("Enter base 10 number:");
+		double n = reader.getDouble();
+		System.out.print("Enter new base:");
+		int b = reader.getInt();
+		int i;
+		int j = 0;
+		double r = n;
+		
+		int whole = (int)r;
+		double frac = r - whole;
+		
+		long rem;
+		String stri = "";
+		String stri2 = "";
+		
+		i = (int)n;
+		
+		do{
+			rem = i % b;
+			i = i/b;
+			if (rem <= 9){
+				stri = rem + stri;
+			} else{
+				stri = String.valueOf((char)(rem + 55)) + stri;
+			}
+		} while (i != 0);
+		
+		
+		do{
+			r = frac * b;
+			whole = (int)r; 
+			frac = r - whole;
+			
+			
+				if (whole <= 9){
+				stri2 = whole + stri2;
+			} else{
+				stri2 = String.valueOf((char)(whole + 55)) + stri2;
+			}
+			
+			
+			j = j + 1;
+		} while (frac != 0 & j < 20);
+		
+		
+		
+		System.out.println("The value " + n + " in base " + b + " is " + stri + "." + stri2);		
+	}
+}
